@@ -8,22 +8,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#0A0A0A',
-        foreground: '#FFFFFF',
-        primary: '#FFFFFF',
-        secondary: '#808080',
-        accent: '#8B5CF6', // Purple accent
-        'accent-green': '#10B981', // Green accent
-        muted: '#1A1A1A',
-        border: '#2A2A2A',
-        'midnight-blue': '#0F172A',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        muted: 'hsl(var(--muted))',
+        border: 'hsl(var(--border))',
+        accent: 'hsl(var(--accent))',
+        'accent-green': 'hsl(var(--accent-green))',
+        'midnight-blue': 'hsl(var(--midnight-blue))',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
-      },
-      backgroundImage: {
-        'texture-dark': "url('/images/texture-dark.png')",
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
       },
     },
   },

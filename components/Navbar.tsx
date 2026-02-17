@@ -2,10 +2,20 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  // Add scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 100)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -15,9 +25,11 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-accent/10 transition-all ${
+      scrolled ? 'bg-black/95 py-3' : 'bg-black/80 py-5'
+    }`}>
       <div className="container">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -25,25 +37,25 @@ export default function Navbar() {
               alt="Nerdy's Hideout"
               width={200}
               height={60}
-              className="h-12 w-auto"
+              className="h-10 w-auto md:h-12"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-foreground hover:text-accent transition-colors duration-200 font-medium"
+                className="text-white/80 hover:text-accent transition-colors text-sm font-medium uppercase tracking-wider"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/#waitlist"
-              className="btn btn-primary"
+              className="btn btn-primary text-xs px-6 py-2"
             >
               Join Waitlist
             </Link>
@@ -75,13 +87,13 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t border-border mt-3">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-foreground hover:text-accent transition-colors duration-200 font-medium"
+                  className="text-white/80 hover:text-accent transition-colors font-medium uppercase tracking-wide text-sm"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

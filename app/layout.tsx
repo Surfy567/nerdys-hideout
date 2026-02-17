@@ -18,12 +18,12 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Nerdy's Hideout | For Real Ones Only",
-  description: 'An exclusive, invite-only music experience in Lagos. Coordinates unknown. Energy certain. Curated by The Nerdy DJ.',
-  keywords: ['Nerdy\'s Hideout', 'The Nerdy DJ', 'Lagos Events', 'Afrobeats', 'Underground Music', 'Invite Only', 'Music Experience'],
+  description: 'An exclusive, invite-only party experience in Lagos. Coordinates unknown. Energy certain. Curated by The Nerdy DJ.',
+  keywords: ['Nerdy\'s Hideout', 'The Nerdy DJ', 'Lagos Events', 'Afrobeats', 'Underground Music', 'Invite Only', 'Party Experience'],
   authors: [{ name: 'The Nerdy DJ' }],
   openGraph: {
     title: "Nerdy's Hideout | For Real Ones Only",
-    description: 'An exclusive, invite-only music experience. Coordinates unknown. Energy certain.',
+    description: 'An exclusive, invite-only party experience. Coordinates unknown. Energy certain.',
     url: 'https://nerdyshideout.com',
     siteName: "Nerdy's Hideout",
     locale: 'en_US',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Nerdy's Hideout | For Real Ones Only",
-    description: 'An exclusive, invite-only music experience. Coordinates unknown. Energy certain.',
+    description: 'An exclusive, invite-only party experience. Coordinates unknown. Energy certain.',
     creator: '@the_nerdydj',
   },
 }
@@ -44,7 +44,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="font-sans antialiased">
+      <body className="grain-overlay">
         <Navbar />
         <main className="min-h-screen">
           {children}
