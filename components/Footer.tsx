@@ -61,7 +61,7 @@ export default function Footer() {
               </li>
               <li>
                 <a 
-                  href="https://youtube.com/@thenerdydj" 
+                  href="https://youtube.com/@the_nerdydj" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-secondary hover:text-accent transition-colors"
