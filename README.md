@@ -38,7 +38,7 @@ A website for Nerdy's Hideout featuring:
 1. **Clone the repo:**
 ```bash
 git clone https://github.com/Surfy567/nerdys-hideout.git
-cd nerdys-hideout-website
+cd nerdys-hideout
 ```
 
 2. **Start Docker:**
