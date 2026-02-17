@@ -21,6 +21,18 @@ export const metadata: Metadata = {
   description: 'An exclusive, invite-only party experience in Lagos. Coordinates unknown. Energy certain. Curated by The Nerdy DJ.',
   keywords: ['Nerdy\'s Hideout', 'The Nerdy DJ', 'Lagos Events', 'Afrobeats', 'Underground Music', 'Invite Only', 'Party Experience'],
   authors: [{ name: 'The Nerdy DJ' }],
+  // Add favicon configuration
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: "Nerdy's Hideout | For Real Ones Only",
     description: 'An exclusive, invite-only party experience. Coordinates unknown. Energy certain.',
