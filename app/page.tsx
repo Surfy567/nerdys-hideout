@@ -117,8 +117,19 @@ export default function HomePage() {
       </section>
 
       {/* Featured Mix Section */}
-      <section id="featured-mix" className="section-padding bg-black">
-        <div className="container">
+      <section id="featured-mix" className="section-padding bg-black relative overflow-hidden">
+        {/* Logo watermark background */}
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 max-w-3xl h-96 opacity-[0.03] pointer-events-none"
+          style={{ 
+            backgroundImage: "url('/images/logo-3.png')",
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+          }}
+        />
+        
+        <div className="container relative z-10">
           <div className="max-w-5xl mx-auto space-y-12">
             <div className="text-center space-y-6">
               <h2 className="font-display text-5xl md:text-6xl font-black gradient-text">
@@ -170,8 +181,19 @@ export default function HomePage() {
       </section>
 
       {/* Waitlist Section */}
-      <section id="waitlist" className="section-padding bg-gradient-to-b from-black via-[#0a0014] to-black">
-        <div className="container">
+      <section id="waitlist" className="section-padding bg-gradient-to-b from-black via-[#0a0014] to-black relative overflow-hidden">
+        {/* Logo watermark background */}
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 max-w-3xl h-96 opacity-[0.03] pointer-events-none"
+          style={{ 
+            backgroundImage: "url('/images/logo-3.png')",
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+          }}
+        />
+        
+        <div className="container relative z-10">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-4">
               <h2 className="font-display text-4xl md:text-5xl font-black gradient-text">
@@ -192,8 +214,19 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section-padding text-center bg-black">
-        <div className="container">
+      <section className="section-padding text-center bg-black relative overflow-hidden">
+        {/* Logo watermark background */}
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 max-w-3xl h-96 opacity-[0.03] pointer-events-none"
+          style={{ 
+            backgroundImage: "url('/images/logo-3.png')",
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+          }}
+        />
+        
+        <div className="container relative z-10">
           <div className="max-w-3xl mx-auto space-y-6">
             <h2 className="font-display text-3xl md:text-4xl font-black gradient-text">
               Your Escape Awaits

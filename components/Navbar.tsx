@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 export default function Navbar() {
@@ -26,19 +25,16 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-accent/10 transition-all ${
-      scrolled ? 'bg-black/95 py-3' : 'bg-black/80 py-5'
+      scrolled ? 'bg-black/95 py-1' : 'bg-black/80 py-2'
     }`}>
       <div className="container">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image
+            <img
               src="/images/logo-3.png"
               alt="Nerdy's Hideout"
-              width={200}
-              height={60}
-              className="h-10 w-auto md:h-12"
-              priority
+              className="h-12 w-auto md:h-14"
             />
           </Link>
 
