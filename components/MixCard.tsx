@@ -1,29 +1,24 @@
 import Link from 'next/link'
 import Image from 'next/image'
-
-interface Mix {
-  slug: string
-  title: string
-  date: string
-  duration: string
-  genre: string
-  youtubeId: string
-  thumbnail: string
-  description: string
-}
+import { Mix } from '@/lib/mixes'
 
 interface MixCardProps {
   mix: Mix
 }
 
 export default function MixCard({ mix }: MixCardProps) {
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString)
+    return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+  }
+
   return (
     <Link href={`/mixes/${mix.slug}`}>
       <div className="group relative bg-cave-surface border border-neon-purple/20 overflow-hidden hover:border-neon-purple/60 transition-all duration-300">
         {/* Thumbnail */}
         <div className="relative h-48 overflow-hidden">
           <Image
-            src={mix.thumbnail}
+            src={`https://img.youtube.com/vi/${mix.youtubeId}/maxresdefault.jpg`}
             alt={mix.title}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -39,10 +34,10 @@ export default function MixCard({ mix }: MixCardProps) {
         {/* Content */}
         <div className="p-6 space-y-3">
           <div className="font-mono text-xs text-neon-green">
-            {mix.date}
+            {formatDate(mix.date)}
           </div>
           
-          <h3 className="font-display text-lg text-silver-bright group-hover:text-neon-purple transition-colors">
+          <h3 className="font-display text-lg text-silver-bright group-hover:text-neon-purple transition-colors line-clamp-2">
             {mix.title}
           </h3>
           
@@ -51,9 +46,13 @@ export default function MixCard({ mix }: MixCardProps) {
           </p>
           
           <div className="flex items-center justify-between pt-2">
-            <span className="font-mono text-xs text-silver-dim">
-              {mix.genre}
-            </span>
+            <div className="flex flex-wrap gap-2">
+              {mix.genres.map((genre) => (
+                <span key={genre} className="font-mono text-xs text-silver-dim">
+                  {genre}
+                </span>
+              ))}
+            </div>
             <span className="font-mono text-xs text-neon-purple group-hover:text-neon-green transition-colors">
               Play →
             </span>
