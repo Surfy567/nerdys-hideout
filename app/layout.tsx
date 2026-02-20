@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
+import { Inter, Orbitron, Share_Tech_Mono } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -10,18 +10,24 @@ const inter = Inter({
   display: 'swap',
 })
 
-const spaceGrotesk = Space_Grotesk({
+const orbitron = Orbitron({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-orbitron',
+  display: 'swap',
+})
+
+const shareTechMono = Share_Tech_Mono({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-share-tech-mono',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: "Nerdy's Hideout | For Real Ones Only",
-  description: 'An exclusive, invite-only party experience in Lagos. Coordinates unknown. Energy certain. Curated by The Nerdy DJ.',
-  keywords: ['Nerdy\'s Hideout', 'The Nerdy DJ', 'Lagos Events', 'Afrobeats', 'Underground Music', 'Invite Only', 'Party Experience'],
+  title: "Nerdy's Hideout | Coordinates Unknown",
+  description: 'An exclusive, invite-only underground DJ experience. Coordinates unknown. Energy certain.',
+  keywords: ['Nerdy\'s Hideout', 'The Nerdy DJ', 'Lagos Events', 'Underground Music', 'Invite Only', 'DJ Experience'],
   authors: [{ name: 'The Nerdy DJ' }],
-  // Add favicon configuration
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -34,8 +40,8 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: "Nerdy's Hideout | For Real Ones Only",
-    description: 'An exclusive, invite-only party experience. Coordinates unknown. Energy certain.',
+    title: "Nerdy's Hideout | Coordinates Unknown",
+    description: 'An encrypted underground. An invite-only frequency. Where sound becomes ritual and the night becomes sanctuary.',
     url: 'https://nerdyshideout.com',
     siteName: "Nerdy's Hideout",
     locale: 'en_US',
@@ -43,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Nerdy's Hideout | For Real Ones Only",
-    description: 'An exclusive, invite-only party experience. Coordinates unknown. Energy certain.',
+    title: "Nerdy's Hideout | Coordinates Unknown",
+    description: 'An encrypted underground. An invite-only frequency.',
     creator: '@the_nerdydj',
   },
 }
@@ -55,8 +61,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="grain-overlay">
+    <html lang="en" className={`${inter.variable} ${orbitron.variable} ${shareTechMono.variable}`}>
+      <body>
         <Navbar />
         <main className="min-h-screen">
           {children}
